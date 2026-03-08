@@ -1,0 +1,256 @@
+[0m00:52:16.828278 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002572799CC90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025727946ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002572793AC50>]}
+
+
+============================== 00:52:16.857576 | a941f3a3-b1d4-41d5-be31-e676b92a3908 ==============================
+[0m00:52:16.857576 [info ] [MainThread]: Running with dbt=1.11.7
+[0m00:52:16.859311 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\nntabeni\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt init offerzen_dbt', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m00:52:16.882152 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\nntabeni\.dbt
+[0m00:52:16.884468 [debug] [MainThread]: Starter project path: C:\Users\nntabeni\Downloads\offerzen-data-pipeline\venv\Lib\site-packages\dbt\include\starter_project
+[0m00:52:17.034977 [info ] [MainThread]: 
+Your new dbt project "offerzen_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m00:52:17.034977 [info ] [MainThread]: Setting up your profile.
+[0m01:35:24.929359 [error] [MainThread]: Encountered an error:
+
+[0m01:35:25.189523 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\nntabeni\Downloads\offerzen-data-pipeline\venv\Lib\site-packages\dbt\cli\requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nntabeni\Downloads\offerzen-data-pipeline\venv\Lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nntabeni\Downloads\offerzen-data-pipeline\venv\Lib\site-packages\dbt\cli\main.py", line 483, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "C:\Users\nntabeni\Downloads\offerzen-data-pipeline\venv\Lib\site-packages\dbt\task\init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "C:\Users\nntabeni\Downloads\offerzen-data-pipeline\venv\Lib\site-packages\dbt\task\init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "C:\Users\nntabeni\Downloads\offerzen-data-pipeline\venv\Lib\site-packages\dbt\task\init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "C:\Users\nntabeni\Downloads\offerzen-data-pipeline\venv\Lib\site-packages\dbt\task\init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nntabeni\Downloads\offerzen-data-pipeline\venv\Lib\site-packages\dbt\task\init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ^^^^^^^^^^^^^
+  File "C:\Users\nntabeni\Downloads\offerzen-data-pipeline\venv\Lib\site-packages\click\termui.py", line 171, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nntabeni\Downloads\offerzen-data-pipeline\venv\Lib\site-packages\click\termui.py", line 154, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m01:35:25.199615 [debug] [MainThread]: Command `dbt init` failed at 01:35:25.199615 after 2588.67 seconds
+[0m01:35:25.199615 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000257279BAC90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025727938A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002572793BB10>]}
+[0m01:35:25.205181 [debug] [MainThread]: Flushing usage events
+[0m01:35:47.537069 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021716D265D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002171AF8FB50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021717787710>]}
+
+
+============================== 01:35:47.543638 | 0463b19a-ebe8-4301-9047-b9019ea44dc7 ==============================
+[0m01:35:47.543638 [info ] [MainThread]: Running with dbt=1.11.7
+[0m01:35:47.553120 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\nntabeni\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt init offerzen_dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m01:35:47.589469 [info ] [MainThread]: A project called offerzen_dbt already exists here.
+[0m01:35:47.589469 [debug] [MainThread]: Command `dbt init` succeeded at 01:35:47.589469 after 0.48 seconds
+[0m01:35:47.589469 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000217144F7210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021714483C90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002171A0E51D0>]}
+[0m01:35:47.589469 [debug] [MainThread]: Flushing usage events
+[0m01:35:56.529465 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m01:38:55.025860 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020CE2991050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020CE6ADD290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020CE6ADF210>]}
+
+
+============================== 01:38:55.041891 | f88c332b-77a0-4958-b741-f024f71dd637 ==============================
+[0m01:38:55.041891 [info ] [MainThread]: Running with dbt=1.11.7
+[0m01:38:55.041891 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\nntabeni\\.dbt', 'use_colors': 'True', 'invocation_command': 'dbt debug', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m01:38:55.083972 [info ] [MainThread]: dbt version: 1.11.7
+[0m01:38:55.094593 [info ] [MainThread]: python version: 3.11.9
+[0m01:38:55.094593 [info ] [MainThread]: python path: C:\Users\nntabeni\Downloads\offerzen-data-pipeline\venv\Scripts\python.exe
+[0m01:38:55.094593 [info ] [MainThread]: os info: Windows-10-10.0.26100-SP0
+[0m01:38:55.094593 [info ] [MainThread]: Using profiles dir at C:\Users\nntabeni\.dbt
+[0m01:38:55.094593 [info ] [MainThread]: Using profiles.yml file at C:\Users\nntabeni\.dbt\profiles.yml
+[0m01:38:55.094593 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\nntabeni\Downloads\offerzen-data-pipeline\dbt_project.yml
+[0m01:38:55.094593 [info ] [MainThread]: Configuration:
+[0m01:38:55.094593 [info ] [MainThread]:   profiles.yml file [[31mERROR not found[0m]
+[0m01:38:55.094593 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m01:38:55.094593 [info ] [MainThread]: Required dependencies:
+[0m01:38:55.103001 [debug] [MainThread]: Executing "git --help"
+[0m01:38:55.106550 [info ] [MainThread]:  - git [[31mERROR[0m]
+
+[0m01:38:55.106550 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m01:38:55.111193 [info ] [MainThread]: [31m3 checks failed:[0m
+[0m01:38:55.112690 [info ] [MainThread]: dbt looked for a profiles.yml file in C:\Users\nntabeni\.dbt\profiles.yml, but did
+not find one. For more information on configuring your profile, consult the
+documentation:
+
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m01:38:55.112690 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\nntabeni\Downloads\offerzen-data-pipeline\dbt_project.yml> not found
+
+[0m01:38:55.112690 [info ] [MainThread]: Error from git --help: Could not find command, ensure it is in the user's PATH and that the user has permissions to run it: "git"
+
+[0m01:38:55.112690 [debug] [MainThread]: Command `dbt debug` failed at 01:38:55.112690 after 0.40 seconds
+[0m01:38:55.112690 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020CE6ADF350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020CE6ADEE10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020CDFFE7110>]}
+[0m01:38:55.112690 [debug] [MainThread]: Flushing usage events
+[0m01:39:04.917177 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m01:42:18.446121 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FA715FD310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FA71E8C5D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FA71E8EE10>]}
+
+
+============================== 01:42:18.457741 | 560636fc-d95d-4693-a0e0-bd56e8db82ef ==============================
+[0m01:42:18.457741 [info ] [MainThread]: Running with dbt=1.11.7
+[0m01:42:18.457741 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\nntabeni\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt debug', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m01:42:18.493206 [info ] [MainThread]: dbt version: 1.11.7
+[0m01:42:18.493206 [info ] [MainThread]: python version: 3.11.9
+[0m01:42:18.493206 [info ] [MainThread]: python path: C:\Users\nntabeni\Downloads\offerzen-data-pipeline\venv\Scripts\python.exe
+[0m01:42:18.493206 [info ] [MainThread]: os info: Windows-10-10.0.26100-SP0
+[0m01:42:18.557670 [info ] [MainThread]: Using profiles dir at C:\Users\nntabeni\.dbt
+[0m01:42:18.557670 [info ] [MainThread]: Using profiles.yml file at C:\Users\nntabeni\.dbt\profiles.yml
+[0m01:42:18.557670 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\nntabeni\Downloads\offerzen-data-pipeline\dbt_project.yml
+[0m01:42:18.557670 [info ] [MainThread]: adapter type: postgres
+[0m01:42:18.557670 [info ] [MainThread]: adapter version: 1.10.0
+[0m01:42:18.557670 [info ] [MainThread]: Configuration:
+[0m01:42:18.557670 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m01:42:18.557670 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m01:42:18.571321 [info ] [MainThread]: Required dependencies:
+[0m01:42:18.571321 [debug] [MainThread]: Executing "git --help"
+[0m01:42:18.575986 [info ] [MainThread]:  - git [[31mERROR[0m]
+
+[0m01:42:18.575986 [info ] [MainThread]: Connection:
+[0m01:42:18.575986 [info ] [MainThread]:   host: localhost
+[0m01:42:18.575986 [info ] [MainThread]:   port: 5432
+[0m01:42:18.575986 [info ] [MainThread]:   user: postgres
+[0m01:42:18.575986 [info ] [MainThread]:   database: offerzen_db
+[0m01:42:18.575986 [info ] [MainThread]:   schema: public
+[0m01:42:18.575986 [info ] [MainThread]:   connect_timeout: 10
+[0m01:42:18.575986 [info ] [MainThread]:   role: None
+[0m01:42:18.586913 [info ] [MainThread]:   search_path: None
+[0m01:42:18.587609 [info ] [MainThread]:   keepalives_idle: 0
+[0m01:42:18.587609 [info ] [MainThread]:   sslmode: None
+[0m01:42:18.590543 [info ] [MainThread]:   sslcert: None
+[0m01:42:18.590543 [info ] [MainThread]:   sslkey: None
+[0m01:42:18.590543 [info ] [MainThread]:   sslrootcert: None
+[0m01:42:18.590543 [info ] [MainThread]:   application_name: dbt
+[0m01:42:18.594548 [info ] [MainThread]:   retries: 1
+[0m01:42:18.594548 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m01:42:19.155477 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m01:42:29.126174 [debug] [MainThread]: Using postgres connection "debug"
+[0m01:42:29.126174 [debug] [MainThread]: On debug: select 1 as id
+[0m01:42:29.126174 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m01:42:29.394803 [debug] [MainThread]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "postgres" does not exist
+
+[0m01:42:29.652817 [debug] [MainThread]: Postgres adapter: Error running SQL: select 1 as id
+[0m01:42:29.652817 [debug] [MainThread]: Postgres adapter: Rolling back transaction.
+[0m01:42:29.666836 [debug] [MainThread]: On debug: No close available on handle
+[0m01:42:29.666836 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m01:42:29.668703 [info ] [MainThread]: [31m3 checks failed:[0m
+[0m01:42:29.668703 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\nntabeni\Downloads\offerzen-data-pipeline\dbt_project.yml> not found
+
+[0m01:42:29.668703 [info ] [MainThread]: Error from git --help: Could not find command, ensure it is in the user's PATH and that the user has permissions to run it: "git"
+
+[0m01:42:29.668703 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "postgres" does not exist
+  
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m01:42:29.668703 [debug] [MainThread]: Command `dbt debug` failed at 01:42:29.668703 after 11.52 seconds
+[0m01:42:29.668703 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m01:42:29.668703 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FA71E2C850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FA71E2C8D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FA71E2FDD0>]}
+[0m01:42:29.668703 [debug] [MainThread]: Flushing usage events
+[0m01:42:38.416435 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m01:43:36.952900 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027090F8ED10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270946C3B50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027090F87390>]}
+
+
+============================== 01:43:36.954911 | d3a9d916-a815-4931-aa84-aae8f907bd96 ==============================
+[0m01:43:36.954911 [info ] [MainThread]: Running with dbt=1.11.7
+[0m01:43:36.954911 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\nntabeni\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m01:43:37.014051 [info ] [MainThread]: dbt version: 1.11.7
+[0m01:43:37.018870 [info ] [MainThread]: python version: 3.11.9
+[0m01:43:37.020885 [info ] [MainThread]: python path: C:\Users\nntabeni\Downloads\offerzen-data-pipeline\venv\Scripts\python.exe
+[0m01:43:37.020885 [info ] [MainThread]: os info: Windows-10-10.0.26100-SP0
+[0m01:43:37.295016 [info ] [MainThread]: Using profiles dir at C:\Users\nntabeni\.dbt
+[0m01:43:37.297085 [info ] [MainThread]: Using profiles.yml file at C:\Users\nntabeni\.dbt\profiles.yml
+[0m01:43:37.297085 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\nntabeni\Downloads\offerzen-data-pipeline\dbt_project.yml
+[0m01:43:37.299103 [info ] [MainThread]: adapter type: postgres
+[0m01:43:37.301489 [info ] [MainThread]: adapter version: 1.10.0
+[0m01:43:37.301489 [info ] [MainThread]: Configuration:
+[0m01:43:37.303715 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m01:43:37.303715 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m01:43:37.303715 [info ] [MainThread]: Required dependencies:
+[0m01:43:37.303715 [debug] [MainThread]: Executing "git --help"
+[0m01:43:37.312670 [info ] [MainThread]:  - git [[31mERROR[0m]
+
+[0m01:43:37.313659 [info ] [MainThread]: Connection:
+[0m01:43:37.315953 [info ] [MainThread]:   host: localhost
+[0m01:43:37.316523 [info ] [MainThread]:   port: 5432
+[0m01:43:37.316523 [info ] [MainThread]:   user: nntabeni
+[0m01:43:37.316523 [info ] [MainThread]:   database: offerzen_db
+[0m01:43:37.316523 [info ] [MainThread]:   schema: public
+[0m01:43:37.316523 [info ] [MainThread]:   connect_timeout: 10
+[0m01:43:37.316523 [info ] [MainThread]:   role: None
+[0m01:43:37.316523 [info ] [MainThread]:   search_path: None
+[0m01:43:37.316523 [info ] [MainThread]:   keepalives_idle: 0
+[0m01:43:37.316523 [info ] [MainThread]:   sslmode: None
+[0m01:43:37.316523 [info ] [MainThread]:   sslcert: None
+[0m01:43:37.316523 [info ] [MainThread]:   sslkey: None
+[0m01:43:37.316523 [info ] [MainThread]:   sslrootcert: None
+[0m01:43:37.316523 [info ] [MainThread]:   application_name: dbt
+[0m01:43:37.328956 [info ] [MainThread]:   retries: 1
+[0m01:43:37.331746 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m01:43:38.013101 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m01:43:52.077180 [debug] [MainThread]: Using postgres connection "debug"
+[0m01:43:52.080323 [debug] [MainThread]: On debug: select 1 as id
+[0m01:43:52.083392 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m01:43:52.546023 [debug] [MainThread]: SQL status: SELECT 1 in 0.465 seconds
+[0m01:43:52.551882 [debug] [MainThread]: On debug: Close
+[0m01:43:52.551882 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m01:43:52.561210 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m01:43:52.563968 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\nntabeni\Downloads\offerzen-data-pipeline\dbt_project.yml> not found
+
+[0m01:43:52.565996 [info ] [MainThread]: Error from git --help: Could not find command, ensure it is in the user's PATH and that the user has permissions to run it: "git"
+
+[0m01:43:52.572591 [debug] [MainThread]: Command `dbt debug` failed at 01:43:52.572166 after 16.10 seconds
+[0m01:43:52.574796 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m01:43:52.576568 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270947CF8D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027095AC4F50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002708DCF7050>]}
+[0m01:43:52.578704 [debug] [MainThread]: Flushing usage events
+[0m01:44:03.684810 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:45:08.293467 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F8FBA74210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F8FAB85190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F8FAB84E90>]}
+
+
+============================== 03:45:08.302427 | 88758105-24d4-4559-bc68-e9e5b117c659 ==============================
+[0m03:45:08.302427 [info ] [MainThread]: Running with dbt=1.11.7
+[0m03:45:08.304435 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\nntabeni\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt run', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m03:45:08.304435 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\nntabeni\Downloads\offerzen-data-pipeline\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m03:45:08.307640 [debug] [MainThread]: Command `dbt run` failed at 03:45:08.307640 after 0.34 seconds
+[0m03:45:08.307640 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F8F4FF7110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F8FBA29550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F8FBA295D0>]}
+[0m03:45:08.307640 [debug] [MainThread]: Flushing usage events
+[0m03:45:17.267607 [debug] [MainThread]: An error was encountered while trying to flush usage events
