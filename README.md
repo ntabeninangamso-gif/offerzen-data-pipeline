@@ -69,55 +69,152 @@ dbt (data build tool)    Data transformation & modelling
 SQL                      Data Analysis
 
 Local Setup Instructions
-#1. Install PostgreSQL
-Download PostgreSQL binaries and extract them locally.
-Initialize the database:
-initdb -D C:\postgres\data
 
-#2. Start PostgreSQL
-Open PowerShell and Run:
-cd C:\postgres\pgsql\bin
-.\pg_ctl -D C:\postgres\data -l logfile start
-This starts the PostreSQL server on port 5432.
+Prerequisites
 
-#3. Install Python Dependencies
-Install the required Python libraries:
+Ensure the following tools are installed on your machine:
+Tool			Version
+Python			3.11.x
+PostgreSQL		14+
+pip				latest
+Git				latest
+
+You can verify installations using:
+python --version
+pip --version
+psql --version
+git --version
+
+1.Clone the Repository
+git clone https://github.com/ntabeninangamso-gif/offerzen-data-pipeline.git
+cd offerzen-data-pipeline
+
+2.Create a Python virtual environment
+python -m venv venv
+ 
+3.Activate the virtual environment
+
+Mac / Linux
+source venv/bin/activate
+ 
+Windows
+venv\Scripts\activate
+ 
+4.Install dependencies
+
+Install all required packages:
 pip install -r requirements.txt
+ 
+Dependencies include:
+	•	pandas
+	•	sqlalchemy
+	•	psycopg2-binary
+	•	python-dotenv
+	•	requests
+	•	dbt-postgres
+ 
+5.Configure environment variables
+Create a .env file in the root of the project:
+ 
+DATABASE_URL=postgresql://postgres:password@localhost:5432/offerzen_db
+ 
+Update the values to match your PostgreSQL configuration.
+ 
+6.Create the PostgreSQL database
 
-#4. 4 Run Data Ingestion
-Run the ingestion scripts to fetch job data from the API and load it into PostgreSQL:
-python fetch_api_data.py
-python load_csv.py
+Open PostgreSQL and create the database:
+CREATE DATABASE offerzen_db;
+ 
+You can also create it via terminal:
+createdb offerzen_db
+ 
+7.Run the ingestion scripts
+Load the raw CSV and API data into PostgreSQL.
+Run:
+python Ingestion/load_csv.py
 
-This populates the raw tables:
+and
+
+python Ingestion/fetch_api_data.py
+ 
+These scripts will populate the raw tables in PostgreSQL.
+These are the tables:
 jobs_current_raw
 jobs_history_raw
-
-#5. Run dbt Transformations
+ 
+8.Run dbt models
 Navigate to the dbt project directory:
 cd offerzen_dbt
-Run all dbt models:
+Run dbt transformations:
 dbt run
-This builds the staging, dimensional, and analytics models.
 
-#6 Run Data Tests
-Execute dbt tests to validate the data:
+To run tests:
 dbt test
+
 These tests ensure:
 • primary keys are not null
 • dimension relationships are valid
 • data quality rules are satisfied
+ 
+This will create the following layers:
+	•	staging
+	•	marts
+	•	analytics
+ 
+9.Verify the pipeline
 
-#7 Generate dbt Documentation
+You can inspect the created tables in PostgreSQL:
+stg_jobs_current
+stg_jobs_history
+stg_fact_jobs
+dim_company
+dim_department
+dim_job
+dim_location
+fact_jobs
+ 
+Analytics models include:
+	•	hiring_trend
+	•	job_by_location
+	•	recruitment_metrics
+	•	avg_time_to_fill_by_department
+	•	jobs_by_department
+ 
+Expected Project Flow
+The pipeline follows this structure:
+ 
+CSV + API Data
+       ↓
+Python Ingestion Layer
+       ↓
+PostgreSQL Raw Tables
+       ↓
+dbt Staging Models
+       ↓
+dbt Marts
+       ↓
+Analytics Models
+
+10.Generate dbt Documentation
 Generate project documentation and lineage:
 dbt docs generate
+
 dbt docs serve
 Open the documentation in your browser to explore:
 	•	model documentation
 	•	column descriptions
 	•	lineage graph
+ 
+Notes
 
-Analytics Metrics
+	•	The project was developed using Python 3.11, so using the same version is recommended.
+	•	All file paths use cross-platform compatible paths.
+	•	The setup instructions are compatible with Mac, Linux, and Windows environments.
+ 
+
+
+Analytics Metrics explained
+
 #1. Recruitment_metrics
 This model provides a high-level summary of recruitment activity:
 Metric                     Description
